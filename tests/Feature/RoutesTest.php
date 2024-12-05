@@ -1,6 +1,6 @@
 <?php
 
-it('test al GET routes', function () {
+it('test all GET routes', function () {
     $responseHome = $this->get('/');
     $responseHome->assertStatus(200);
 
