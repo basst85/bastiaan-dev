@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Welcome;
+use App\Livewire\SendMessage;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Welcome::class);
+Route::get('/contact', SendMessage::class);
