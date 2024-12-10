@@ -10,7 +10,12 @@
     <div class="mx-auto max-w-6xl px-4">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
-                <a href="/" class="text-xl font-bold">Logo</a>
+                <a
+                    href="/"
+                    class="bg-gradient-to-br from-white from-30% to-black/40 bg-clip-text text-3xl font-medium text-transparent opacity-100"
+                >
+                    Bastiaan.dev
+                </a>
             </div>
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
