@@ -20,6 +20,6 @@ class SendContactMessage implements ShouldQueue
     public function handle(): void
     {
         //Todo: Process the message, e.g., send an email notification
-        dump('Received message');
+        dump('Received message', $this->contactMessage);
     }
 }
