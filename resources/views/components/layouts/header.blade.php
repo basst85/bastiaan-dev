@@ -14,7 +14,7 @@
                     href="/"
                     class="bg-gradient-to-br from-white from-30% to-black/40 bg-clip-text text-3xl font-medium text-transparent opacity-100"
                 >
-                    Bastiaan.dev
+                    bastiaan.dev
                 </a>
             </div>
             <div class="hidden md:block">
