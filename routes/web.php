@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Livewire\Welcome;
 use Livewire\Volt\Volt;
 
-Route::get('/', Welcome::class);
+Volt::route('/', 'welcome');
 Volt::route('/contact', 'contact');
+Volt::route('/blog', 'welcome');

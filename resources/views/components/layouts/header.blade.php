@@ -6,13 +6,16 @@
     ];
 @endphp
 
-<header class="sticky top-0 z-30 bg-gray-800 bg-gray-900/70 text-white backdrop-blur-xl" x-data="{ isOpen: false }">
-    <div class="mx-auto max-w-6xl px-4">
+<header
+    class="sticky top-0 z-30 mx-auto max-w-5xl bg-gray-800 bg-gray-900/70 text-white backdrop-blur-xl"
+    x-data="{ isOpen: false }"
+>
+    <div class="px-4">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
                 <a
                     href="/"
-                    class="bg-gradient-to-br from-white from-30% to-black/40 bg-clip-text text-3xl font-medium text-transparent opacity-100"
+                    class="bg-gradient-to-r from-teal-400 to-indigo-500 bg-clip-text text-3xl font-medium text-transparent"
                 >
                     bastiaan.dev
                 </a>
@@ -22,6 +25,7 @@
                     @foreach ($menuItems as $item)
                         <a
                             href="{{ $item['href'] }}"
+                            wire:navigate
                             class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700"
                         >
                             {{ $item['label'] }}
@@ -77,6 +81,7 @@
             @foreach ($menuItems as $item)
                 <a
                     href="{{ $item['href'] }}"
+                    wire:navigate
                     class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700"
                 >
                     {{ $item['label'] }}

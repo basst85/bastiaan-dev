@@ -39,7 +39,7 @@ $send = function (): void {
 <main class="flex h-screen flex-col items-center justify-center">
     <x-card class="w-1/2">
         <h1 class="text-2xl font-bold">Contact</h1>
-        <p class="mb-4">Heb je een vraag of wil je iets anders kwijt? Laat het me weten!</p>
+        <p class="mb-4">Any questions or remarks? Feel free to contact me!</p>
 
         <x-form wire:submit="send">
             <x-input label="Naam" wire:model="name" required />
