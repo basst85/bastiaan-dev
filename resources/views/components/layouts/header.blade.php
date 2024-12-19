@@ -15,7 +15,7 @@
             <div class="flex items-center">
                 <a
                     href="/"
-                    class="bg-gradient-to-r from-teal-400 to-indigo-500 bg-clip-text text-3xl font-medium text-transparent"
+                    class="bg-gradient-to-r from-teal-400 to-indigo-500 bg-clip-text text-3xl font-medium text-transparent transition-transform duration-500 hover:scale-110"
                 >
                     bastiaan.dev
                 </a>
@@ -26,7 +26,7 @@
                         <a
                             href="{{ $item['href'] }}"
                             wire:navigate
-                            class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700"
+                            class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-teal-200"
                         >
                             {{ $item['label'] }}
                         </a>
