@@ -7,10 +7,10 @@
 @endphp
 
 <header
-    class="sticky top-0 z-30 mx-auto max-w-5xl bg-gray-800 bg-gray-900/70 text-white backdrop-blur-xl"
+    class="sticky top-0 z-30 bg-gray-800 bg-gray-900/70 text-white backdrop-blur-xl shadow-lg"
     x-data="{ isOpen: false }"
 >
-    <div class="px-4">
+    <div class="px-4 mx-auto max-w-5xl">
         <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
                 <a
