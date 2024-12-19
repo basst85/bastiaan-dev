@@ -36,16 +36,16 @@ $send = function (): void {
 };
 ?>
 
-<main class="flex h-screen flex-col items-center justify-center">
-    <x-card class="w-1/2">
-        <h1 class="text-2xl font-bold">Contact</h1>
+<main class="flex flex-col justify-center min-h-[calc(100vh-4rem)] px-2 md:px-0">
+    <div class="mx-auto min-w-full md:min-w-[50vw] p-4 rounded-lg shadow-lg border border-gray-200">
+        <h1 class="text-2xl font-bold text-gray-200">Contact</h1>
         <p class="mb-4">Any questions or remarks? Feel free to contact me!</p>
 
         <x-form wire:submit="send">
-            <x-input label="Naam" wire:model="name" required />
-            <x-input label="E-mailadres" wire:model="email" required />
-            <x-input label="Onderwerp" wire:model="subject" required />
-            <x-textarea label="Bericht" wire:model="message" required class="h-64" />
+            <x-input label="Name" wire:model="name" required aria-label="Name" />
+            <x-input label="Email address" wire:model="email" required aria-label="Email address" />
+            <x-input label="Subject" wire:model="subject" required aria-label="Subject" />
+            <x-textarea label="Message" wire:model="message" required class="h-64" aria-label="Message" />
 
             @error('error')
                 <div class="alert alert-error" role="alert">
@@ -61,8 +61,10 @@ $send = function (): void {
             @endif
 
             <x-slot:actions>
-                <x-button label="Versturen" class="btn-primary" type="submit" spinner="send" />
+                <x-atoms.button submit="true" aria-label="Send contact message">
+                    Send message
+                </x-atoms.button>
             </x-slot>
         </x-form>
-    </x-card>
+    </div>
 </main>
