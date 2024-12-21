@@ -11,12 +11,12 @@ $message = state('message', null);
 $send = function (): void {
     //Todo: Use Livewire's forms for validation
     if (empty($this->name) || empty($this->email) || empty($this->subject) || empty($this->message)) {
-        $this->addError('error', 'Vul alle velden in');
+        $this->addError('error', 'Please fill in all fields');
         return;
     }
 
     if (! filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-        $this->addError('error', 'Vul een geldig e-mailadres in');
+        $this->addError('error', 'Please enter a valid email address');
         return;
     }
 
@@ -32,7 +32,7 @@ $send = function (): void {
     $this->resetErrorBag();
     $this->reset('name', 'email', 'subject', 'message');
 
-    session()->flash('message', 'Bedankt voor je bericht.');
+    session()->flash('message', 'Thanks for your message! I will get back to you as soon as possible.');
 };
 ?>
 
