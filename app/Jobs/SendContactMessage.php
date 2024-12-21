@@ -5,6 +5,7 @@ namespace App\Jobs;
 use App\Models\ContactMessage;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Resend\Laravel\Facades\Resend;
 
 class SendContactMessage implements ShouldQueue
 {
@@ -19,7 +20,11 @@ class SendContactMessage implements ShouldQueue
 
     public function handle(): void
     {
-        //Todo: Process the message, e.g., send an email notification
-        dump('Received message', $this->contactMessage);
+        Resend::emails()->send([
+            'from' => 'bastiaan.dev <hello@bastiaan.dev>',
+            'to' => ['hello@bastiaan.dev'],
+            'subject' => 'New contact message',
+            'html' => view('emails.contact-message', ['contactMessage' => $this->contactMessage])->render(),
+        ]);
     }
 }
