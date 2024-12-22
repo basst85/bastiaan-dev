@@ -1,4 +1,4 @@
-<main class="flex flex-col justify-center min-h-[calc(100vh-4rem)]">
+<main class="flex min-h-[calc(100vh-4rem)] flex-col justify-center">
     <div class="mx-auto max-w-5xl px-4">
         <h1 class="mb-4 text-5xl font-bold text-gray-100 md:text-6xl">
             Hi!

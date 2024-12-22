@@ -36,8 +36,8 @@ $send = function (): void {
 };
 ?>
 
-<main class="flex flex-col justify-center min-h-[calc(100vh-4rem)] px-2 md:px-0">
-    <div class="mx-auto min-w-full md:min-w-[50vw] p-4 rounded-lg shadow-lg border border-gray-200">
+<main class="flex min-h-[calc(100vh-4rem)] flex-col justify-center px-2 md:px-0">
+    <div class="mx-auto min-w-full rounded-lg border border-gray-200 p-4 shadow-lg md:min-w-[50vw]">
         <h1 class="text-2xl font-bold text-gray-200">Contact</h1>
         <p class="mb-4">Any questions or remarks? Feel free to contact me!</p>
 
@@ -61,9 +61,7 @@ $send = function (): void {
             @endif
 
             <x-slot:actions>
-                <x-atoms.button submit="true" aria-label="Send contact message">
-                    Send message
-                </x-atoms.button>
+                <x-atoms.button submit="true" aria-label="Send contact message">Send message</x-atoms.button>
             </x-slot>
         </x-form>
     </div>
