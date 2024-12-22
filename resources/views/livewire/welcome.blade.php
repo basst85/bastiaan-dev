@@ -21,16 +21,13 @@
         <div class="flex gap-6">
             <a
                 href="https://www.linkedin.com/in/bastiaan-steinmeier-6391a328"
-                class="flex items-center gap-2 text-gray-400 transition-colors hover:text-teal-200"
+                class="group flex items-center gap-2 text-gray-400 transition-colors"
             >
-                <x-bi-linkedin class="h-5 w-5 fill-current" />
+                <x-bi-linkedin class="h-5 w-5 fill-current group-hover:text-teal-200" />
                 <span>LinkedIn</span>
             </a>
-            <a
-                href="https://github.com/basst85"
-                class="transition-color flex items-center gap-2 text-gray-400 hover:text-teal-200"
-            >
-                <x-bi-github class="h-5 w-5 fill-current" />
+            <a href="https://github.com/basst85" class="transition-color group flex items-center gap-2 text-gray-400">
+                <x-bi-github class="h-5 w-5 fill-current group-hover:text-teal-200" />
                 <span>GitHub</span>
             </a>
         </div>

@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @media screen and (max-width: 640px) {
-  select,
-  textarea,
-  input {
-    font-size: 1.2rem !important;
-  }
+    select,
+    textarea,
+    input {
+        font-size: 1.2rem !important;
+    }
 }
