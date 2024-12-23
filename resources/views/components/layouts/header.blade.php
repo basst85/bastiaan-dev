@@ -45,7 +45,7 @@
                 <a
                     href="{{ $item['href'] }}"
                     wire:navigate
-                    class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700"
+                    class="block rounded-md px-3 py-4 my-4 text-base font-medium hover:bg-gray-700"
                 >
                     {{ $item['label'] }}
                 </a>
