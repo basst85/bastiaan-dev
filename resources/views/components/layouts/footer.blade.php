@@ -1,28 +1,29 @@
 @php
     $menuItems = [
-        ['href' => '/', 'label' => 'Home', 'external' => false],
-        ['href' => '/blog', 'label' => 'Blog', 'external' => false],
-        ['href' => '/contact', 'label' => 'Contact', 'external' => false],
-        ['href' => 'https://github.com/basst85/bastiaan-dev', 'label' => 'Source code', 'external' => true]
+        ["href" => "/", "label" => "Home", "external" => false],
+        ["href" => "/blog", "label" => "Blog", "external" => false],
+        ["href" => "/contact", "label" => "Contact", "external" => false],
+        ["href" => "https://github.com/basst85/bastiaan-dev", "label" => "Source code", "external" => true],
     ];
 @endphp
 
 <footer class="mt-12">
-    <div class="mx-2 max-w-5xl px-4 pt-8 pb-4 border-t border-gray-200 md:mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="mx-2 max-w-5xl border-t border-gray-200 px-4 pb-4 pt-8 md:mx-auto">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <div>
                 <p class="text-2xl font-bold">Quick links</p>
                 <ul class="mt-4 space-y-2">
                     @foreach ($menuItems as $item)
                         <li>
                             <a
-                                href="{{ $item['href'] }}"
+                                href="{{ $item["href"] }}"
                                 class="hover:text-teal-200 hover:underline"
-                                @if ($item['external'])
-                                    target="_blank" rel="noopener noreferrer"
+                                @if ($item["external"])
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 @endif
                             >
-                                {{ $item['label'] }}
+                                {{ $item["label"] }}
                             </a>
                         </li>
                     @endforeach
@@ -60,12 +61,18 @@
                         >
                             Discord
                         </a>
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="mt-12 text-center text-gray-400 text-sm">
-            <p>&copy; {{ date('Y') }} - Bastiaan Steinmeier<p>
-            <p>Built with <x-bi-heart class="h-5 w-5 fill-current text-red-500 inline" /> using Laravel and Tailwind</p>
+        <div class="mt-12 text-center text-sm text-gray-400">
+            <p>&copy; {{ date("Y") }} - Bastiaan Steinmeier</p>
+            <p></p>
+            <p>
+                Built with
+                <x-bi-heart class="inline h-5 w-5 fill-current text-red-500" />
+                using Laravel and Tailwind
+            </p>
         </div>
     </div>
 </footer>
