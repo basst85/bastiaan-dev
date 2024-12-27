@@ -70,7 +70,7 @@
             <p></p>
             <p>
                 Built with
-                <x-bi-heart class="inline h-5 w-5 fill-current text-red-500" />
+                <x-bi-heart class="motion-preset-pulse inline h-5 w-5 fill-current text-red-500 motion-duration-1500" />
                 using Laravel and Tailwind
             </p>
         </div>

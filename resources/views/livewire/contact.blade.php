@@ -1,4 +1,6 @@
-<div class="mx-auto min-w-full rounded-lg border border-gray-200 p-4 px-4 shadow-lg md:max-w-5xl">
+<div
+    class="motion-preset-slide-up-lg mx-auto min-w-full rounded-lg border border-gray-200 p-4 px-4 shadow-lg md:max-w-5xl"
+>
     <h1 class="text-2xl font-bold text-gray-200">Contact</h1>
     <p class="mb-4">Any questions or remarks? Feel free to contact me!</p>
 
@@ -23,14 +25,14 @@
         />
 
         @error('error')
-            <div class="alert alert-error" role="alert">
+            <div class="alert alert-error motion-preset-pop" role="alert">
                 <strong class="font-bold">Oeps!</strong>
                 <span class="block sm:inline">{{ $message }}</span>
             </div>
         @enderror
 
         @if (session()->has('success'))
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-success motion-preset-pop" role="alert">
                 <span>{{ session('success') }}</span>
             </div>
         @endif

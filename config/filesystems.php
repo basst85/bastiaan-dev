@@ -57,6 +57,11 @@ return [
             'throw' => false,
         ],
 
+        'posts' => [
+            'driver' => 'local',
+            'root' => base_path('posts'),
+        ],
+
     ],
 
     /*
@@ -73,5 +78,7 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
+
+
 
 ];

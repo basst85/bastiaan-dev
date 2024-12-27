@@ -1,4 +1,4 @@
-<div class="mx-auto max-w-5xl px-4">
+<div class="motion-preset-slide-up-lg mx-auto max-w-5xl px-4">
     <h1 class="mb-4 text-5xl font-bold text-gray-100 md:text-6xl">
         Hi!
         <br />

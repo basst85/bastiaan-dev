@@ -21,6 +21,7 @@ export default {
         fill: ['hover', 'focus']
     },
     plugins: [
-        require("daisyui")
+        require("daisyui"),
+        require("tailwindcss-motion")
     ],
 };
