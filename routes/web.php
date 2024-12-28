@@ -8,4 +8,4 @@ use App\Livewire\ShowBlogpost;
 Volt::route('/', 'welcome');
 Volt::route('/contact', SendMessage::class);
 Volt::route('/blog', IndexBlogpost::class);
-Volt::route('/blog/{slug}', ShowBlogpost::class);
+Volt::route('/blog/{slug}', ShowBlogpost::class)->name('blogpost.show');

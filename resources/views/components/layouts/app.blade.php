@@ -13,11 +13,7 @@
 
     <body class="bg-gray-900 font-sans text-white/50 antialiased">
         <x-layouts.header />
-        <main class="flex min-h-[calc(100vh-4rem)] flex-col justify-center">
-            <div class="mx-auto max-w-5xl px-4">
-                {{ $slot }}
-            </div>
-        </main>
+            {{ $slot }}
         <x-layouts.footer />
     </body>
 </html>
