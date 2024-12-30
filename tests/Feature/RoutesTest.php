@@ -6,4 +6,10 @@ it('test all GET routes', function () {
 
     $responseContact = $this->get('/contact');
     $responseContact->assertStatus(200);
+
+    $responseAbout = $this->get('/blog');
+    $responseAbout->assertStatus(200);
+
+    $responseServices = $this->get('/blog/test-blog-post');
+    $responseServices->assertStatus(200);
 });

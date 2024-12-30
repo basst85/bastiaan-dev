@@ -5,8 +5,8 @@ namespace App\Jobs;
 use App\Models\ContactMessage;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
-use Notification;
 use App\Notifications\ContactFormSubmitted;
+use Illuminate\Support\Facades\Notification;
 
 class SendContactMessage implements ShouldQueue
 {
