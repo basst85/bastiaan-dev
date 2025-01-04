@@ -10,8 +10,8 @@
             </h1>
 
             <p class="mb-8 text-lg text-gray-300 md:text-xl">
-                Dedicated self-taught Full Stack Developer with a passion for creating intuitive user interfaces and efficient
-                backend systems.
+                Dedicated self-taught Full Stack Developer with a passion for creating intuitive user interfaces and
+                efficient backend systems.
             </p>
 
             <div class="mb-12 flex flex-wrap gap-4">

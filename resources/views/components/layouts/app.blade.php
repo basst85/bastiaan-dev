@@ -13,7 +13,7 @@
 
     <body class="bg-gray-900 font-sans text-white/50 antialiased">
         <x-layouts.header />
-            {{ $slot }}
+        {{ $slot }}
         <x-layouts.footer />
     </body>
 </html>

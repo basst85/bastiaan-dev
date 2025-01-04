@@ -1,10 +1,8 @@
 <main class="flex min-h-[calc(100vh-4rem)] flex-col justify-start">
     <div class="mx-auto max-w-5xl px-4 py-4">
-        <h1 class="text-6xl font-bold text-gray-200">
-            Contact
-        </h1>
+        <h1 class="text-6xl font-bold text-gray-200">Contact</h1>
         <div
-            class="motion-preset-slide-up-lg mt-4 mx-auto min-w-full rounded-lg border border-gray-200 p-4 px-4 shadow-lg md:max-w-5xl"
+            class="motion-preset-slide-up-lg mx-auto mt-4 min-w-full rounded-lg border border-gray-200 p-4 px-4 shadow-lg md:max-w-5xl"
         >
             <p class="mb-4">Any questions or remarks? Feel free to contact me!</p>
 
