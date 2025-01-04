@@ -16,7 +16,9 @@ class BlogpostReact extends Component
 
     public function addReaction($reaction)
     {
-        if (session()->has('reaction.' . $this->slug)) return;
+        if (session()->has('reaction.' . $this->slug)) {
+            return;
+        }
 
         AddReactionToBlogpost::dispatch($this->slug, $reaction);
 

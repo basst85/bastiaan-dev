@@ -7,11 +7,11 @@ use Spatie\Sheets\Sheets;
 
 class IndexBlogpost extends Component
 {
-    public function render(Sheets $blogposts): View
+    public function render(Sheets $sheets): View
     {
 
         return view('livewire.index-blogpost', [
-            'blogposts' => $blogposts->all()
+            'blogposts' => $sheets->all()
         ]);
     }
 }

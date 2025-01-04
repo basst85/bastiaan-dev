@@ -11,16 +11,11 @@ class AddReactionToBlogpost implements ShouldQueue
 {
     use Queueable;
 
-    public $slug;
-    public $reaction;
-
     /**
      * Create a new job instance.
      */
-    public function __construct($slug, $reaction)
+    public function __construct(public $slug, public $reaction)
     {
-        $this->slug = $slug;
-        $this->reaction = $reaction;
     }
 
     /**
