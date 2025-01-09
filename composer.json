@@ -9,7 +9,7 @@
         "php": "^8.2",
         "blade-ui-kit/blade-icons": "^1.7",
         "davidhsianturi/blade-bootstrap-icons": "^1.5",
-        "laravel/framework": "^11.31",
+        "laravel/framework": "^11.37",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
         "livewire/volt": "^1.6",
