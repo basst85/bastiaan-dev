@@ -7,6 +7,7 @@
                     <a
                         class="rounded-lg border border-gray-400 p-1 transition-transform duration-200 hover:scale-105"
                         href="{{ route('blogpost.show', $blogpost->slug) }}"
+                        data-pan="blogpost-{{ $blogpost->slug }}"
                     >
                         <div class="h-60 overflow-hidden rounded-lg">
                             <img

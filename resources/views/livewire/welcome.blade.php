@@ -15,13 +15,14 @@
             </p>
 
             <div class="mb-12 flex flex-wrap gap-4">
-                <x-atoms.button href="/blog" wire:navigate>Read my blog</x-atoms.button>
-                <x-atoms.button href="/contact" wire:navigate>Contact me</x-atoms.button>
+                <x-atoms.button data-pan="home-blog" href="/blog" wire:navigate>Read my blog</x-atoms.button>
+                <x-atoms.button data-pan="home-contact" href="/contact" wire:navigate>Contact me</x-atoms.button>
             </div>
 
             <div class="flex gap-6">
                 <a
                     href="https://www.linkedin.com/in/bastiaan-steinmeier-6391a328"
+                    data-pan="home-social-linkedin"
                     class="group flex items-center gap-2 text-gray-400 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -31,6 +32,7 @@
                 </a>
                 <a
                     href="https://github.com/basst85"
+                    data-pan="home-social-github"
                     class="transition-color group flex items-center gap-2 text-gray-400"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -40,6 +42,7 @@
                 </a>
                 <a
                     href="https://discordapp.com/users/837649040316825622"
+                    data-pan="home-social-discord"
                     class="transition-color group flex items-center gap-2 text-gray-400"
                     target="_blank"
                     rel="noopener noreferrer"

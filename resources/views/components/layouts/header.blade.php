@@ -25,6 +25,7 @@
                     @foreach ($menuItems as $item)
                         <a
                             href="{{ $item['href'] }}"
+                            data-pan="header-menu-{{ Str::slug($item['label']) }}"
                             wire:navigate
                             class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-teal-200"
                         >
@@ -44,6 +45,7 @@
             @foreach ($menuItems as $item)
                 <a
                     href="{{ $item['href'] }}"
+                    data-pan="header-menu-{{ Str::slug($item['label']) }}"
                     wire:navigate
                     class="my-4 block rounded-md px-3 py-4 text-base font-medium hover:bg-gray-700"
                 >

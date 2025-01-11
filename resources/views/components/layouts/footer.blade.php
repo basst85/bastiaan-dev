@@ -17,6 +17,7 @@
                         <li>
                             <a
                                 href="{{ $item["href"] }}"
+                                data-pan="footer-menu-{{ Str::slug($item["label"]) }}"
                                 class="hover:text-teal-200 hover:underline"
                                 @if ($item["external"])
                                     target="_blank"
@@ -35,6 +36,7 @@
                     <li>
                         <a
                             href="https://github.com/basst85"
+                            data-pan="footer-menu-github"
                             class="hover:text-teal-200 hover:underline"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -45,6 +47,7 @@
                     <li>
                         <a
                             href="https://www.linkedin.com/in/bastiaan-steinmeier-6391a328/"
+                            data-pan="footer-menu-linkedin"
                             class="hover:text-teal-200 hover:underline"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -55,6 +58,7 @@
                     <li>
                         <a
                             href="https://discordapp.com/users/837649040316825622"
+                            data-pan="footer-menu-discord"
                             class="hover:text-teal-200 hover:underline"
                             target="_blank"
                             rel="noopener noreferrer"
