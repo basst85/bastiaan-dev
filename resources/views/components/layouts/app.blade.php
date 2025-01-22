@@ -4,9 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>{{ config('app.name') }} | Bastiaan Steinmeier</title>
-        <meta name="description" content="Personal website of Bastiaan Steinmeier" />
-        <meta name="author" content="Bastiaan Steinmeier" />
+        @yield('meta')
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>

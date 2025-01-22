@@ -1,3 +1,9 @@
+@section('meta')
+    <title>Blogpost overview - {{ config('app.name') }}</title>
+    <meta name="description" content="A collection of blogposts by Bastiaan Steinmeier" />
+    <meta name="keywords" content="blog, blogposts, javascript, php, development, ai, Bastiaan Steinmeier" />
+@endsection
+
 <main class="flex min-h-[calc(100vh-4rem)] flex-col justify-start">
     <div class="mx-auto min-w-full max-w-5xl px-4 py-4 md:min-w-[64rem]">
         <div class="flex flex-col items-start">

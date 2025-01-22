@@ -1,3 +1,9 @@
+@section('meta')
+    <title>{{ config('app.name') }} - Bastiaan Steinmeier</title>
+    <meta name="description" content="Personal website of Bastiaan Steinmeier - Full Stack Developer" />
+    <meta name="keywords" content="full stack, developer, javascript, php, development, ai, Bastiaan Steinmeier" />
+@endsection
+
 <main class="flex min-h-[calc(100vh-4rem)] flex-col justify-center">
     <div class="mx-auto max-w-5xl px-4">
         <div class="motion-preset-slide-up-lg mx-auto max-w-5xl px-4">

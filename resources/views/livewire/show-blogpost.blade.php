@@ -1,3 +1,39 @@
+@section('meta')
+    <title>{{ $blogpost->title }} - {{ config('app.name') }}</title>
+    <meta name="description" content="{{ $blogpost->intro }}" />
+    <meta name="keywords" content="{{ $blogpost->tags }}" />
+    <meta name="last-modified" content="{{ $blogpost->updated_date }}" />
+    <meta name="author" content="{{ $blogpost->author }}" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content="{{ $blogpost->title }} - {{ config('app.name') }}" />
+    <meta property="og:description" content="{{ $blogpost->intro }}" />
+    <meta property="og:image" content="{{ url($blogpost->header_image) }}" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="{{ config('app.name') }}" />
+    <meta property="og:locale" content="{{ app()->getLocale() }}" />
+    <meta property="article:published_time" content="{{ $blogpost->publish_date }}" />
+    <meta property="article:modified_time" content="{{ $blogpost->updated_date }}" />
+    <meta property="article:author" content="{{ $blogpost->author }}" />
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "{{ $blogpost->title }}",
+            "description": "{{ $blogpost->intro }}",
+            "image": "{{ url($blogpost->header_image) }}",
+            "author": {
+                "@type": "Person",
+                "name": "{{ $blogpost->author }}"
+            },
+            "datePublished": "{{ $blogpost->publish_date }}",
+            "dateModified": "{{ $blogpost->updated_date }}"
+        }
+    </script>
+@endsection
+
 <main class="flex min-h-[calc(100vh-4rem)] flex-col justify-start">
     <div class="mx-auto min-w-full max-w-5xl px-4 py-4">
         <div class="motion-preset-slide-up-lg mx-auto max-w-5xl">
@@ -5,6 +41,7 @@
                 <img
                     src="{{ url($blogpost->header_image) }}"
                     alt="{{ $blogpost->title }}"
+                    title="{{ $blogpost->title }}"
                     class="min-w-full object-cover object-center transition-transform duration-200 hover:scale-105"
                 />
             </div>
@@ -21,11 +58,11 @@
                 Last updated on {{ \Carbon\Carbon::parse($blogpost->updated_date)->format('F j, Y @ H:i') }}
             </p>
 
-            <p class="mt-4 w-full border-b-[1px] border-gray-400"></p>
+            <p class="mt-4 mb-8 w-full border-b-[1px] border-gray-400"></p>
 
-            <p class="mt-8 text-gray-200">
+            <div class="blogpost-content">
                 {{ $blogpost->contents }}
-            </p>
+            </div>
 
             <div class="mt-8">
                 <livewire:BlogpostReact :slug="$blogpost->slug" :key="$blogpost->slug" />

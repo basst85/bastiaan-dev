@@ -1,3 +1,8 @@
+@section('meta')
+    <title>Contact me - {{ config('app.name') }}</title>
+    <meta name="description" content="Contact Bastiaan Steinmeier" />
+@endsection
+
 <main class="flex min-h-[calc(100vh-4rem)] flex-col justify-start">
     <div class="mx-auto max-w-5xl px-4 py-4">
         <h1 class="text-6xl font-bold text-gray-200">Contact</h1>

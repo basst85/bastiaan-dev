@@ -9,7 +9,7 @@ tags: test,self
 min_read: 1
 header_image: /images/hello-world.jpg
 ---
-<div class="text-xl">
+<div class="text-xl blogpost-content">
 <p class="mb-4">
 It's official! I'm finally taking the plunge and launching my personal website.
 </p>
@@ -17,7 +17,6 @@ It's official! I'm finally taking the plunge and launching my personal website.
 <p class="mb-4">
 This blog will serve as a platform for me to document my coding journey and share insights and tips. I'm still under construction, but I'm committed to regularly updating this space with new content.
 </p>
-
 
 **Feel free to connect with me on LinkedIn or GitHub**
 </div>
