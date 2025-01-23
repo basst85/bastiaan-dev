@@ -76,4 +76,15 @@
         border-radius: 0.5rem;
         margin: 1rem 0;
     }
+
+    a {
+        color: #63b3ed;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #b2f5ea;
+            text-decoration: underline;
+        }
+    }
 }

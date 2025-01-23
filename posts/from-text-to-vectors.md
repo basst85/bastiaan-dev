@@ -148,3 +148,16 @@ It searches for embeddings similar to the query "Looks like a turtle" and displa
 ![Example script result](/images/result-vector-search.png)
 
 By using semantic search, we can find relevant information based on the meaning of the query, not just the keywords. This approach can be applied to a wide range of applications, from product search to content recommendation and question answering. I hope this guide has given you a practical understanding of how semantic search works and how you can build your own semantic search engine using SQLite and OpenAI's API.
+
+## References and further reading
+<a href="https://www.pinecone.io/learn/vector-embeddings-for-developers" target="_blank">Vector Embeddings for Developers</a>
+
+<a href="https://huggingface.co/spaces/jphwang/colorful_vectors" target="_blank">Colorful Vectors</a>
+
+<a href="https://platform.openai.com/docs/api-reference/embeddings" target="_blank">OpenAI API</a>
+
+<a href="https://www.sqlite.org/index.html" target="_blank">SQLite</a>
+
+<a href="https://en.wikipedia.org/wiki/Semantic_search" target="_blank">Semantic Search</a>
+
+<a href="https://en.wikipedia.org/wiki/Vector_space_model" target="_blank">Vector Search</a>

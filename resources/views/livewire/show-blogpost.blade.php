@@ -58,7 +58,7 @@
                 Last updated on {{ \Carbon\Carbon::parse($blogpost->updated_date)->format('F j, Y @ H:i') }}
             </p>
 
-            <p class="mt-4 mb-8 w-full border-b-[1px] border-gray-400"></p>
+            <p class="mb-8 mt-4 w-full border-b-[1px] border-gray-400"></p>
 
             <div class="blogpost-content">
                 {{ $blogpost->contents }}
