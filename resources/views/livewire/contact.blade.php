@@ -9,7 +9,7 @@
         <div
             class="motion-preset-slide-up-lg mx-auto mt-4 min-w-full rounded-lg border border-gray-200 p-4 px-4 shadow-lg md:max-w-5xl"
         >
-            <p class="mb-4">Any questions or remarks? Feel free to contact me!</p>
+            <p class="mb-4 text-gray-200">Any questions or remarks? Feel free to contact me!</p>
 
             <x-form wire:submit="send" class="md:min-w-[60rem]">
                 <x-input label="Name" wire:model="name" required aria-label="Name" class="border-gray-200" />
