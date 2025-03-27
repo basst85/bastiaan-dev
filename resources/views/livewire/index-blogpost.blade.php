@@ -1,7 +1,7 @@
 @section('meta')
     <title>Blogpost overview - {{ config('app.name') }}</title>
     <meta name="description" content="A collection of blogposts by Bastiaan Steinmeier" />
-    <meta name="keywords" content="blog, blogposts, javascript, php, development, ai, Bastiaan Steinmeier" />
+    <meta name="keywords" content="blog, blogposts, javascript, php, development, ai, react, bun, next.js, Bastiaan Steinmeier" />
 @endsection
 
 <main class="flex min-h-[calc(100vh-4rem)] flex-col justify-start">

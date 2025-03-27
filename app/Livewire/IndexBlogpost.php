@@ -10,8 +10,13 @@ class IndexBlogpost extends Component
     public function render(Sheets $sheets): View
     {
 
+        $posts = $sheets->all()
+            ->sortByDesc(fn($post) => $post->publish_date)
+            ->values()
+            ->all();
+
         return view('livewire.index-blogpost', [
-            'blogposts' => $sheets->all()
+            'blogposts' => $posts
         ]);
     }
 }
