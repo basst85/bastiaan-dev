@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://bastiaan.dev/blog</loc>
+        <lastmod>2025-03-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://bastiaan.dev/contact</loc>
+        <lastmod>2025-03-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://bastiaan.dev/blog/from-text-to-vectors</loc>
+        <lastmod>2025-01-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://bastiaan.dev/blog/modern-web-development-with-bun</loc>
+        <lastmod>2025-03-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1</priority>
+    </url>
+</urlset>
