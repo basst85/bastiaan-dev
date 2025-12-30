@@ -7,7 +7,7 @@ author: Bastiaan
 intro: "When prompting starts to hallucinate, fine-tuning is often the step that turns a clever language model into a system you can actually trust."
 tags: development,llm,ollama,fine-tunen,artificial-intelligence
 min_read: 15
-header_image: /images/from-text-to-vectors.jpg
+header_image: /images/llm-finetuning.jpg
 ---
 <div class="w-full blogpost-content">
 
