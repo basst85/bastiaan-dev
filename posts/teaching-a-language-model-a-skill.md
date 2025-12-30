@@ -9,6 +9,7 @@ tags: development,llm,ollama,fine-tunen,artificial-intelligence
 min_read: 15
 header_image: /images/llm-finetuning.jpg
 ---
+<div class="text-xl blogpost-content">
 ## Introduction
 There’s a moment in every LLM project where the vibe changes.
 
@@ -183,3 +184,5 @@ If your system needs to *decide*, not just explain, fine-tuning is often the dif
 <a href="https://www.digitalocean.com/community/tutorials/llm-finetuning-domain-specific-models" target="_blank">LLM Fine-Tuning: A Guide for Domain-Specific Models</a>
 
 <a href="https://medium.com/@jamestang/fine-tuning-llms-for-specific-domains-why-how-and-what-to-consider-8b2fd5781615" target="_blank">Fine-Tuning LLMs for Specific Domains: Why, How, and What to Consider</a>
+
+</div>
