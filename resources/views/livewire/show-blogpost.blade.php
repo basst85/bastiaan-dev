@@ -35,14 +35,14 @@
 @endsection
 
 <main class="flex min-h-[calc(100vh-4rem)] flex-col justify-start">
-    <div class="mx-auto min-w-full max-w-5xl px-4 py-4">
+    <div class="mx-auto w-full max-w-5xl px-4 py-4">
         <div class="motion-preset-slide-up-lg mx-auto max-w-5xl">
             <div class="h-48 w-full overflow-hidden rounded-lg md:h-96">
                 <img
                     src="{{ url($blogpost->header_image) }}"
                     alt="{{ $blogpost->title }}"
                     title="{{ $blogpost->title }}"
-                    class="min-w-full object-cover object-center transition-transform duration-200 hover:scale-105"
+                    class="w-full object-cover object-center transition-transform duration-200 hover:scale-105"
                 />
             </div>
             <h1 class="mt-4 text-4xl font-bold text-gray-200">
