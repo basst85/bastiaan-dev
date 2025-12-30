@@ -19,7 +19,7 @@ You notice it when:
 - a support bot confidently invents a refund policy that doesn’t exist  
 - a legal or medical summarizer uses beautiful language while quietly changing meaning  
 - an internal assistant gives answers that sound right, but can’t be tested reliably  
-- a poker coach gives “reasonable” advice, while **hallucineren** stack sizes, actions, or ranges  
+- a poker coach gives “reasonable” advice, while **hallucinating** stack sizes, actions, or ranges  
 
 That’s when prompting starts to feel like negotiating, and you begin looking for something sturdier.
 This is where fine-tuning becomes interesting.
