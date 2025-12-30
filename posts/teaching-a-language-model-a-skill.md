@@ -9,7 +9,7 @@ tags: development,llm,ollama,fine-tunen,artificial-intelligence
 min_read: 15
 header_image: /images/llm-finetuning.jpg
 ---
-<div class="w-full max-w-screen blogpost-content">
+<div class="break-words overflow-x-hidden">
 
 ## Introduction
 There’s a moment in every LLM project where the vibe changes.
