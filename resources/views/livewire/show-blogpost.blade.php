@@ -60,7 +60,7 @@
 
             <p class="mb-8 mt-4 w-full border-b-[1px] border-gray-400"></p>
 
-            <div class="blogpost-content">
+            <div class="break-words overflow-x-hidden blogpost-content">
                 {{ $blogpost->contents }}
             </div>
 
