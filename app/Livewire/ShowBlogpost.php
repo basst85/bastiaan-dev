@@ -12,7 +12,7 @@ class ShowBlogpost extends Component
     public function render(Sheets $sheets): View
     {
         $blogpost = $sheets->get(request()->slug) ?? abort(404);
-        
+
         // Set SEO meta tags
         $seoData = new SEOData(
             title: $blogpost->title,
@@ -23,7 +23,7 @@ class ShowBlogpost extends Component
             modified_time: is_string($blogpost->updated_date) ? Carbon::parse($blogpost->updated_date) : $blogpost->updated_date,
             type: 'article',
         );
-        
+
         seo($seoData);
 
         return view('livewire.show-blogpost', [
