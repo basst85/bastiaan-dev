@@ -15,6 +15,11 @@ return [
 
     'sets' => [
 
+        'bootstrap' => [
+            'path' => 'vendor/twbs/bootstrap-icons/icons',
+            'prefix' => 'bi',
+        ],
+
         // 'default' => [
         //
         //     /*

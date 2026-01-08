@@ -1,39 +1,3 @@
-@section('meta')
-    <title>{{ $blogpost->title }} - {{ config('app.name') }}</title>
-    <meta name="description" content="{{ $blogpost->intro }}" />
-    <meta name="keywords" content="{{ $blogpost->tags }}" />
-    <meta name="last-modified" content="{{ $blogpost->updated_date }}" />
-    <meta name="author" content="{{ $blogpost->author }}" />
-    <meta name="robots" content="index, follow" />
-
-    <meta property="og:title" content="{{ $blogpost->title }} - {{ config('app.name') }}" />
-    <meta property="og:description" content="{{ $blogpost->intro }}" />
-    <meta property="og:image" content="{{ url($blogpost->header_image) }}" />
-    <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="{{ config('app.name') }}" />
-    <meta property="og:locale" content="{{ app()->getLocale() }}" />
-    <meta property="article:published_time" content="{{ $blogpost->publish_date }}" />
-    <meta property="article:modified_time" content="{{ $blogpost->updated_date }}" />
-    <meta property="article:author" content="{{ $blogpost->author }}" />
-
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "{{ $blogpost->title }}",
-            "description": "{{ $blogpost->intro }}",
-            "image": "{{ url($blogpost->header_image) }}",
-            "author": {
-                "@type": "Person",
-                "name": "{{ $blogpost->author }}"
-            },
-            "datePublished": "{{ $blogpost->publish_date }}",
-            "dateModified": "{{ $blogpost->updated_date }}"
-        }
-    </script>
-@endsection
-
 <main class="flex min-h-[calc(100vh-4rem)] flex-col justify-start">
     <div class="mx-auto w-full max-w-5xl px-4 py-4">
         <div class="motion-preset-slide-up-lg mx-auto max-w-5xl">
@@ -61,7 +25,7 @@
             <p class="mb-8 mt-4 w-full border-b-[1px] border-gray-400"></p>
 
             <div class="break-words overflow-x-hidden blogpost-content">
-                {{ $blogpost->contents }}
+                {!! $blogpost->contents !!}
             </div>
 
             <div class="mt-8">
