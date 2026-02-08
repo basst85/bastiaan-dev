@@ -5,7 +5,7 @@ publish_date: 2026-02-08 21:00
 updated_date: 2026-02-08 21:00
 author: Bastiaan
 intro: "Semantic search finds the right text. RAG turns that text into grounded answers. In this post we’ll build a local RAG agent with Bun, SQLite vector search, and Ollama. Fast, private, and simple."
-tags: development,llm,rag,ollama,sqlite,bun,vector-search,artificial-intelligence
+tags: development,vector search,sqlite,llm,rag,ollama,sqlite,bun,artificial-intelligence
 min_read: 12
 header_image: /images/local-rag-agent.jpg
 ---
@@ -144,6 +144,8 @@ Not every question needs retrieval.
 If someone asks “2 + 2”, retrieval adds noise.
 
 So the project exposes a `search_database` tool and lets the chat model decide when to call it. This keeps answers clean and can reduce latency.
+
+![Flowchart RAG](/images/from-vectors-to-answers-local-rag-flowchart.png)
 
 ## Conclusion
 
