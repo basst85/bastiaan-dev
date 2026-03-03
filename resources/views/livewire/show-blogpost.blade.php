@@ -1,4 +1,12 @@
 <main class="flex min-h-[calc(100vh-4rem)] flex-col justify-start">
+    <x-og-image>
+        <div class="flex h-full w-full items-center justify-center bg-gray-900 p-16">
+            <div class="flex flex-col gap-6">
+                <h1 class="text-6xl font-bold text-white">{{ $blogpost->title }}</h1>
+                <p class="text-2xl text-gray-400">{{ $blogpost->author }} &mdash; {{ \Carbon\Carbon::parse($blogpost->publish_date)->format('F j, Y') }}</p>
+            </div>
+        </div>
+    </x-og-image>
     <div class="mx-auto w-full max-w-5xl px-4 py-4">
         <div class="motion-preset-slide-up-lg mx-auto max-w-5xl">
             <div class="h-48 w-full overflow-hidden rounded-lg md:h-96">
