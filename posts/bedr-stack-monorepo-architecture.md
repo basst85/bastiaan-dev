@@ -86,7 +86,7 @@ Elysia validates incoming data via `t.Object`. If a field is missing, TypeScript
 
 Because the React frontend consumes data directly from the shared client, the codebase remains organized. There is no need to maintain custom `fetch` wrappers or external tools like Swagger clients. You import the client and get type completion across your API structure.
 
-```tsx
+```typescript
 // apps/frontend/src/pages/Users.tsx
 import { useEffect, useState } from 'react';
 import { client } from 'shared-client';
@@ -118,7 +118,7 @@ export const UsersPage = () => {
 
 This stack isn't necessary for every project. If you are publishing a simple blog or a purely static website, a static-site generator is usually a better fit. 
 
-However, for applications with custom logic—where you have a database, API endpoints, and a dynamic frontend—the [BEDR-stack](https://github.com/basst85/BEDR-stack) offers a streamlined developer experience. The architectural flexibility combined with strict type safety makes it a practical setup.
+However, for applications with custom logic, where you have a database, API endpoints, and a dynamic frontend, [BEDR-stack](https://github.com/basst85/BEDR-stack) offers a streamlined developer experience. The architectural flexibility combined with strict type safety makes it a practical setup.
 
 ## Conclusion
 
