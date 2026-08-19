@@ -2,15 +2,16 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
-use App\Models\ContactMessage;
 use App\Jobs\SendContactMessage;
+use App\Models\ContactMessage;
 use Livewire\Attributes\Validate;
-
+use Livewire\Component;
+use RalphJSmit\Laravel\SEO\Schema\BreadcrumbListSchema;
+use RalphJSmit\Laravel\SEO\SchemaCollection;
+use RalphJSmit\Laravel\SEO\Support\SEOData;
 
 class SendMessage extends Component
 {
-
     #[Validate('required')]
     public $name;
 
@@ -43,6 +44,23 @@ class SendMessage extends Component
 
     public function render()
     {
+        // Set SEO meta tags + JSON-LD structured data
+        seo(new SEOData(
+            title: 'Contact me - '.config('app.name'),
+            description: 'Contact Bastiaan Steinmeier',
+            author: 'Bastiaan Steinmeier',
+            schema: SchemaCollection::initialize()
+                ->add(fn (SEOData $SEOData) => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'ContactPage',
+                    'name' => $SEOData->title,
+                    'url' => $SEOData->url,
+                ])
+                ->addBreadcrumbs(fn (BreadcrumbListSchema $breadcrumbs): BreadcrumbListSchema => $breadcrumbs->prependBreadcrumbs([
+                    'Home' => url('/'),
+                ])),
+        ));
+
         return view('livewire.contact');
     }
 }

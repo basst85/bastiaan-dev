@@ -113,4 +113,16 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Contact Form Recipient
+    |--------------------------------------------------------------------------
+    |
+    | The address that receives notifications submitted through the contact
+    | form (see App\Jobs\SendContactMessage).
+    |
+    */
+
+    'to_address' => env('MAIL_TO_ADDRESS'),
+
 ];

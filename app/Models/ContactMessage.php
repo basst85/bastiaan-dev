@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 class ContactMessage
@@ -9,6 +11,5 @@ class ContactMessage
         public string $email,
         public string $subject,
         public string $message
-    ){
-    }
+    ) {}
 }

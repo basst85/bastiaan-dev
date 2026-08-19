@@ -1,0 +1,21 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app
+
+    level: 5
+
+    ignoreErrors:
+        # spatie/sheets exposes frontmatter fields as dynamic properties on Sheet
+        # (no stub/PHPDoc ships for them), so these are known-safe, not real bugs.
+        -
+            identifier: property.notFound
+            path: app/Livewire/ShowBlogpost.php
+
+        # Laravel's own Model::$fillable/$hidden stubs use `list<string>`, stricter
+        # than the stock `array<int, string>` in the default skeleton User model.
+        -
+            identifier: property.phpDocType
+            path: app/Models/User.php

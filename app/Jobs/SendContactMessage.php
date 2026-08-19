@@ -3,9 +3,9 @@
 namespace App\Jobs;
 
 use App\Models\ContactMessage;
+use App\Notifications\ContactFormSubmitted;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
-use App\Notifications\ContactFormSubmitted;
 use Illuminate\Support\Facades\Notification;
 
 class SendContactMessage implements ShouldQueue
@@ -21,7 +21,7 @@ class SendContactMessage implements ShouldQueue
 
     public function handle(): void
     {
-        Notification::route('mail', env('MAIL_TO_ADDRESS'))
+        Notification::route('mail', config('mail.to_address'))
             ->notify(new ContactFormSubmitted($this->contactMessage));
     }
 }

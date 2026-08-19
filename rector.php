@@ -8,9 +8,9 @@ use Rector\Php55\Rector\String_\StringClassNameToClassConstantRector;
 return RectorConfig::configure()
     ->withImportNames()
     ->withPaths([
-        __DIR__ . '/app',
-        __DIR__ . '/tests',
-        __DIR__ . '/config',
+        __DIR__.'/app',
+        __DIR__.'/tests',
+        __DIR__.'/config',
     ])
     ->withSkip([
         // for tests

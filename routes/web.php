@@ -1,9 +1,9 @@
 <?php
 
-use Livewire\Volt\Volt;
-use App\Livewire\SendMessage;
 use App\Livewire\IndexBlogpost;
+use App\Livewire\SendMessage;
 use App\Livewire\ShowBlogpost;
+use Livewire\Volt\Volt;
 use Spatie\MarkdownResponse\Middleware\ProvideMarkdownResponse;
 
 Volt::route('/', 'welcome');

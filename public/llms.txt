@@ -1,0 +1,29 @@
+# bastiaan.dev
+
+> Personal website and technical blog of Bastiaan Steinmeier, a self-taught full stack developer. Content covers web development (PHP/Laravel, TypeScript, Bun, React) and applied AI/LLM engineering (agentic orchestration, RAG, fine-tuning, semantic search).
+
+Notes:
+
+- The blog posts below are ordered newest first, matching the order on https://bastiaan.dev/blog.
+- This site is built with Laravel, Livewire, and Tailwind CSS; the source code is public (see Optional section).
+
+## Pages
+
+- [Home](https://bastiaan.dev/): Introduction to Bastiaan Steinmeier and links to his socials (GitHub, LinkedIn, Discord).
+- [Blog](https://bastiaan.dev/blog): Overview of all blog posts.
+- [Contact](https://bastiaan.dev/contact): Contact form to reach Bastiaan directly.
+
+## Blog posts
+
+- [Building a parallel development squad: agentic orchestration with Claude](https://bastiaan.dev/blog/agentic-orchestration-claude): Replacing the monolithic chatbot with a squad of specialized sub-agents; building an autonomous development workflow with Claude, MCP, and local RAG.
+- [End-to-End Type Safety: Building with the BEDR-stack](https://bastiaan.dev/blog/bedr-stack-monorepo-architecture): A practical, type-safe monorepo setup using Bun, Elysia, Drizzle, and React.
+- [From Vectors to Answers: Building a Local RAG Agent](https://bastiaan.dev/blog/from-vectors-to-answers-local-rag): Building a local RAG agent with Bun, SQLite vector search, and Ollama.
+- [Teaching a language model a skill (using poker as an example)](https://bastiaan.dev/blog/teaching-a-language-model-a-skill): Using fine-tuning to turn a hallucinating language model into a system you can actually trust.
+- [Modern Web Development with Bun, React, and Tailwind CSS](https://bastiaan.dev/blog/modern-web-development-with-bun): Introducing a streamlined stack of Bun, React, and Tailwind CSS for modern web development.
+- [From Text to Vectors: A Practical Guide to Semantic Search](https://bastiaan.dev/blog/from-text-to-vectors): Building a semantic search engine using SQLite and OpenAI's API.
+- [Hello, world](https://bastiaan.dev/blog/test-blog-post): The launch post introducing this personal website.
+
+## Optional
+
+- [Source code on GitHub](https://github.com/basst85/bastiaan-dev): The Laravel/Livewire codebase powering this website.
+- [Bastiaan Steinmeier on LinkedIn](https://www.linkedin.com/in/bastiaan-steinmeier-6391a328/): Professional profile.

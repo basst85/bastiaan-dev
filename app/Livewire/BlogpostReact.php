@@ -2,13 +2,14 @@
 
 namespace App\Livewire;
 
-use App\Models\BlogReaction;
 use App\Jobs\AddReactionToBlogpost;
+use App\Models\BlogReaction;
 use Livewire\Component;
 
 class BlogpostReact extends Component
 {
     public $slug;
+
     public $reactionCounts = [];
 
     public function mount($slug)
@@ -35,13 +36,13 @@ class BlogpostReact extends Component
 
     public function addReaction($reaction)
     {
-        if (session()->has('reaction.' . $this->slug)) {
+        if (session()->has('reaction.'.$this->slug)) {
             return;
         }
 
         AddReactionToBlogpost::dispatch($this->slug, $reaction);
 
-        session()->put('reaction.' . $this->slug, $reaction);
+        session()->put('reaction.'.$this->slug, $reaction);
         session()->flash('message', 'Thanks!');
 
         // Update counts immediately for better UX

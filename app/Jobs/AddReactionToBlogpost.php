@@ -2,10 +2,10 @@
 
 namespace App\Jobs;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Queue\Queueable;
 use App\Enums\BlogReactionType;
 use App\Models\BlogReaction;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Queue\Queueable;
 
 class AddReactionToBlogpost implements ShouldQueue
 {
@@ -14,9 +14,7 @@ class AddReactionToBlogpost implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(public $slug, public $reaction)
-    {
-    }
+    public function __construct(public $slug, public $reaction) {}
 
     /**
      * Execute the job.

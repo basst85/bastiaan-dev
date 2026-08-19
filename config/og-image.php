@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Spatie\OgImage\Actions\GenerateOgImageAction;
 use Spatie\OgImage\Actions\InjectOgImageFallbackAction;
 use Spatie\OgImage\Actions\RenderOgImageScreenshotAction;
