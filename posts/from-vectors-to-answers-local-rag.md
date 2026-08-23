@@ -5,9 +5,20 @@ publish_date: 2026-02-08 21:00
 updated_date: 2026-02-08 21:00
 author: Bastiaan
 intro: "Semantic search finds the right text. RAG turns that text into grounded answers. In this post we’ll build a local RAG agent with Bun, SQLite vector search, and Ollama. Fast, private, and simple."
-tags: development,vector search,sqlite,llm,rag,ollama,sqlite,bun,artificial-intelligence
+tags: development,vector search,sqlite,llm,rag,ollama,bun,artificial-intelligence
 min_read: 12
 header_image: /images/local-rag-agent.jpg
+faq:
+  - question: "What does RAG stand for and how does it differ from plain semantic search?"
+    answer: "RAG stands for Retrieval-Augmented Generation. Semantic search finds relevant text; RAG takes that retrieved text one step further and feeds it to a language model as context so it can generate a grounded answer."
+  - question: "Why run RAG locally instead of using a cloud stack?"
+    answer: "Local RAG keeps your knowledge base private, avoids network round-trips for embeddings and retrieval, and can run entirely from a single SQLite file, without any separate vector database server."
+  - question: "What is EmbeddingGemma and why is it used here?"
+    answer: "EmbeddingGemma is Google's on-device embedding model, built for local retrieval and semantic search. It supports Matryoshka Representation Learning, which trains one model to output useful embeddings at several sizes, 768, 512, 256, or 128 dimensions, so you can trade retrieval quality for lower storage and faster search by truncating the vector, for example to 256 dimensions instead of the full 768."
+  - question: "How does sqlite-vector make local RAG possible?"
+    answer: "It is a SQLite extension that adds vector similarity search directly inside SQLite, so embeddings can be stored as BLOBs and queried with cosine, dot, or L2 distance, without any extra infrastructure."
+  - question: "Does the agent always retrieve context before answering?"
+    answer: "No, it exposes retrieval as a search_database tool and lets the chat model decide when to call it, so simple questions that do not need the knowledge base are not slowed down by an unnecessary lookup."
 ---
 <div class="max-w-sm md:max-w-full">
 

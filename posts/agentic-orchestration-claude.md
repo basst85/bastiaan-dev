@@ -8,6 +8,17 @@ intro: "Single-prompt engineering is reaching its limits; it is time to replace 
 tags: development,ai,llm,agentic orchestration,mcp,rag,workflow
 min_read: 10
 header_image: /images/agentic-orchestration.jpg
+faq:
+  - question: "What is agentic orchestration in the context of LLM development?"
+    answer: "It is the practice of splitting a single, monolithic LLM session into multiple specialized sub-agents that each have a narrow focus, coordinated through explicit workflows and connected to tools via the Model Context Protocol (MCP), instead of relying on one large system prompt to do everything."
+  - question: "Why does a single large system prompt eventually break down?"
+    answer: "As conversation history grows, the context window fills up and recall accuracy measurably drops, so the model starts forgetting earlier instructions. Anthropic calls this context rot. Splitting responsibilities across focused sub-agents keeps each one's context small and relevant."
+  - question: "What is the Model Context Protocol (MCP) used for here?"
+    answer: "MCP exposes tools, like a search_components RAG lookup, to a sub-agent in a structured way, so it can query exactly the documentation or interfaces it needs just-in-time, instead of having that information stuffed into the prompt upfront."
+  - question: "How do you define a specialized sub-agent?"
+    answer: "By adding a Markdown file with YAML frontmatter, for example under .claude/agents/, that declares the agent's name, description, and an explicit tool allowlist, plus instructions in the body for how it should behave. Whether an agent can only read or also write follows from which tools you grant it, not from a separate permission field."
+  - question: "When should you use an explicit workflow instead of letting agents discover each other dynamically?"
+    answer: "Dynamic routing works fine for simple, ad-hoc coding questions, but multi-step tasks like refactors or new features need deterministic, repeatable execution. That is what an explicit workflow file provides, including running independent steps in parallel."
 ---
 <div class="max-w-sm md:max-w-full">
 
@@ -41,12 +52,9 @@ Here is an example of a specialized frontend engineer teammate:
 
 ```markdown
 ---
-name: UI Component Architect
+name: ui-component-architect
 description: Responsible for generating React components strictly adhering to the internal design system.
-allowed_tools:
-  - mcp__internal_knowledge__search_components
-  - mcp__internal_knowledge__get_component_interface
-file_access: read-write
+tools: mcp__internal_knowledge__search_components, mcp__internal_knowledge__get_component_interface, Read, Edit
 ---
 
 You are the UI Component Architect. Your sole responsibility is to design and write React components.
@@ -58,7 +66,7 @@ You are the UI Component Architect. Your sole responsibility is to design and wr
 4. Do not touch backend logic, database layers, or routing. If a task requires these, report the limitation back to the Lead Agent immediately.
 ```
 
-By decoupling the tools and restrictions this way, you can easily spin up a parallel `.claude/agents/code-reviewer.md` that has `read-only` file access and only holds permission to run your local linter.
+By decoupling the tools this way, you can easily spin up a parallel `.claude/agents/code-reviewer.md` that only lists read-only tools, such as `Read` and `Grep` plus your linter's MCP tool. Leaving out `Edit`/`Write` is what makes it read-only — there is no separate file-access flag.
 
 ## Coordinating with Explicit Workflows
 

@@ -5,9 +5,20 @@ publish_date: 2025-12-30 22:00
 updated_date: 2025-12-30 22:45
 author: Bastiaan
 intro: "When prompting starts to hallucinate, fine-tuning is often the step that turns a clever language model into a system you can actually trust."
-tags: development,llm,ollama,fine-tunen,artificial-intelligence
+tags: development,llm,ollama,fine-tuning,artificial-intelligence
 min_read: 15
 header_image: /images/llm-finetuning.jpg
+faq:
+  - question: "When should you fine-tune a model instead of just improving your prompt?"
+    answer: "When you need consistent, repeatable, testable behavior rather than a plausible-sounding answer. Fine-tuning is worth it once prompting alone starts producing inconsistent or hallucinated results on a specific, structured task."
+  - question: "How is fine-tuning different from RAG?"
+    answer: "RAG keeps knowledge outside the model and retrieves it at answer time, useful for facts that change often. Fine-tuning changes the model's weights, so it is better suited to fixing behavior such as output format, tone, or decision patterns that do not hold up no matter how the retrieved context is worded. The two are not mutually exclusive: production systems often combine both, fine-tuning for consistent behavior and RAG for up-to-date facts, since each addresses a different failure mode."
+  - question: "Why is poker used as an example for fine-tuning?"
+    answer: "Poker is a strict decision problem with hidden information and many near-identical situations, making it a strong stress test for whether a model can act consistently instead of just talking plausibly about concepts."
+  - question: "What is LoRA and why is it preferred over full fine-tuning?"
+    answer: "LoRA trains small adapter layers on top of a frozen base model instead of updating all its weights, which needs far less compute and memory while still effectively teaching the model the desired behavior. QLoRA is a memory-optimized variant of the same idea."
+  - question: "Does fine-tuning eliminate hallucinations completely?"
+    answer: "No. It narrows the space of likely outputs and reinforces the response format and reasoning style you trained it on, which helps with hallucinations caused by inconsistent behavior. But it is not a blanket fix: fine-tuning on new factual knowledge the model did not already have can actually increase hallucinations rather than reduce them. It works best for narrowing behavior, not for teaching new facts, which is better handled through RAG or grounding."
 ---
 <div class="max-w-sm md:max-w-full">
 

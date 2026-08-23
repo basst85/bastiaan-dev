@@ -8,6 +8,17 @@ intro: "In this post, I'll introduce you to a powerful combination of tools for 
 tags: development,react,bun,tailwind
 min_read: 10
 header_image: /images/developer-laptop-nyc.jpg
+faq:
+  - question: "Why choose Bun over Node.js?"
+    answer: "Bun's runtime is faster in specific ways, such as sub-10ms cold starts and much faster package installs, and its built-in bundler and transpiler remove the need for separate tools like webpack or ts-node. The speed gain is workload-dependent though: for I/O-heavy apps with a database in the loop, HTTP throughput differences between Bun and Node are often marginal, since network and database latency dominate over runtime overhead."
+  - question: "Does using Bun mean giving up the existing Node.js and npm ecosystem?"
+    answer: "Mostly no, but not entirely without caveats. Bun implements the Node-API interface, so most packages that stick to standard APIs, such as Express, Zod, or typical database clients, run unmodified. Packages with native C++ addons that bind directly against V8 internals rather than through Node-API don't work, because Bun runs on JavaScriptCore, not V8. Examples include sharp, native bcrypt builds, and canvas. Check compatibility before assuming a drop-in swap if your project depends on native binary modules."
+  - question: "What role does Tailwind CSS play in this stack?"
+    answer: "Tailwind provides utility classes so you can style components directly in your markup, which keeps styling fast and consistent without maintaining large separate CSS files."
+  - question: "Which extra tools pair well with Bun, React, and Tailwind?"
+    answer: "Shadcn UI for ready-made accessible components, React Router for navigation, and a data-fetching library like TanStack Query or SWR for handling API state."
+  - question: "Is this stack suitable for large, complex applications?"
+    answer: "It works for both, but Bun's performance edge doesn't scale simply with project size. It shows up most clearly in cold-start-heavy and highly concurrent I/O workloads, such as serverless functions or request-heavy APIs with light per-request work. For large applications where a database or external API dominates response time, the runtime difference matters less, so also weigh Bun's relative youth and native-addon compatibility gaps before committing a large, long-lived codebase to it."
 ---
 ## Introduction
 

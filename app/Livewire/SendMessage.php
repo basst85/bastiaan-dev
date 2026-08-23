@@ -37,7 +37,7 @@ class SendMessage extends Component
 
         SendContactMessage::dispatch($contactMessage);
 
-        session()->flash('success', 'Thanks for your message! I will get back to you as soon as possible.');
+        session()->flash('success', "Thanks for your message. I'll get back to you as soon as possible.");
 
         $this->reset();
     }

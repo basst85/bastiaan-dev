@@ -1,13 +1,13 @@
 @php
     $menuItems = [
-        ['href' => '/', 'label' => 'Home'],
-        ['href' => '/blog', 'label' => 'Blog'],
-        ['href' => '/contact', 'label' => 'Contact'],
+        ['href' => '/', 'label' => 'Home', 'active' => request()->is('/')],
+        ['href' => '/blog', 'label' => 'Blog', 'active' => request()->is('blog') || request()->is('blog/*')],
+        ['href' => '/contact', 'label' => 'Contact', 'active' => request()->is('contact')],
     ];
 @endphp
 
 <header
-    class="sticky top-0 z-30 bg-gray-800 bg-gray-900/70 text-white shadow-lg backdrop-blur-xl"
+    class="sticky top-0 z-30 border-b border-stone-800 bg-stone-900/80 text-stone-200 backdrop-blur-xl"
     x-data="{ isOpen: false }"
 >
     <div class="mx-auto max-w-5xl px-4">
@@ -15,8 +15,11 @@
             <div class="flex items-center">
                 <a
                     href="/"
-                    class="bg-gradient-to-r from-teal-400 to-indigo-500 bg-clip-text text-3xl font-medium text-transparent transition-transform duration-500 hover:scale-110"
+                    data-pan="header-logo"
+                    wire:navigate
+                    class="font-mono text-xl font-medium text-stone-100 transition-colors hover:text-accent-300"
                 >
+                    <span class="text-accent-400">~/</span>
                     bastiaan.dev
                 </a>
             </div>
@@ -27,7 +30,8 @@
                             href="{{ $item['href'] }}"
                             data-pan="header-menu-{{ Str::slug($item['label']) }}"
                             wire:navigate
-                            class="rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-700 hover:text-teal-200"
+                            @if ($item['active']) aria-current="page" @endif
+                            class="{{ $item['active'] ? 'text-accent-300' : 'text-stone-300 hover:bg-stone-800 hover:text-stone-100' }} rounded-md px-3 py-2 text-sm font-medium transition-colors"
                         >
                             {{ $item['label'] }}
                         </a>
@@ -47,7 +51,8 @@
                     href="{{ $item['href'] }}"
                     data-pan="header-menu-{{ Str::slug($item['label']) }}"
                     wire:navigate
-                    class="my-4 block rounded-md px-3 py-4 text-base font-medium hover:bg-gray-700"
+                    @if ($item['active']) aria-current="page" @endif
+                    class="{{ $item['active'] ? 'text-accent-300' : 'text-stone-300 hover:bg-stone-800 hover:text-stone-100' }} my-4 block rounded-md px-3 py-4 text-base font-medium transition-colors"
                 >
                     {{ $item['label'] }}
                 </a>

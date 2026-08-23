@@ -8,6 +8,17 @@ intro: "Modern full-stack development doesn't require heavy meta-frameworks. In 
 tags: development,typescript,bun,elysia,drizzle,react,monorepo
 min_read: 10
 header_image: /images/bedr-stack.jpg
+faq:
+  - question: "What does BEDR stand for?"
+    answer: "Bun, ElysiaJS, Drizzle ORM, and React, four tools combined into one type-safe monorepo architecture."
+  - question: "How does the BEDR-stack share types between backend and frontend?"
+    answer: "Through a shared Eden Treaty client living in a shared workspace package. The frontend imports this client and gets full TypeScript completion on the API surface without manually writing DTOs or a Swagger client."
+  - question: "Is the BEDR-stack a good fit for a simple static site or blog?"
+    answer: "No, for a purely static site a static-site generator is a better, simpler choice. The BEDR-stack pays off once you have a real database, API endpoints, and a dynamic frontend to keep in sync."
+  - question: "Why Drizzle ORM instead of something like Prisma?"
+    answer: "Drizzle stays close to plain SQL and ships with zero dependencies, and it supports SQLite dialects Prisma doesn't, such as bun:sqlite. Prisma has narrowed this gap since version 7 by getting lighter and more SQL-aware, but Drizzle still gives you more direct control over the generated SQL, which fits the BEDR-stack's transparency-first approach."
+  - question: "Does using the BEDR-stack lock you into a rigid architecture?"
+    answer: "No, it provides building blocks such as the runtime, framework, ORM, and frontend library rather than an opinionated all-in-one framework. You still decide how your backend and frontend are structured."
 ---
 <div class="max-w-sm md:max-w-full">
 

@@ -2,11 +2,13 @@
 
 namespace App\Livewire;
 
+use App\Support\PersonSchema;
 use Carbon\Carbon;
 use Illuminate\View\View;
 use Livewire\Component;
 use RalphJSmit\Laravel\SEO\Schema\ArticleSchema;
 use RalphJSmit\Laravel\SEO\Schema\BreadcrumbListSchema;
+use RalphJSmit\Laravel\SEO\Schema\FaqPageSchema;
 use RalphJSmit\Laravel\SEO\SchemaCollection;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
 use Spatie\Sheets\Sheets;
@@ -28,13 +30,23 @@ class ShowBlogpost extends Component
             schema: SchemaCollection::initialize()
                 ->addArticle(function (ArticleSchema $articleSchema): ArticleSchema {
                     $articleSchema->type = 'BlogPosting';
+                    $articleSchema->authors = PersonSchema::asArray();
 
                     return $articleSchema;
                 })
                 ->addBreadcrumbs(fn (BreadcrumbListSchema $breadcrumbs): BreadcrumbListSchema => $breadcrumbs->prependBreadcrumbs([
                     'Home' => url('/'),
                     'Blog' => url('/blog'),
-                ])),
+                ]))
+                ->when(! empty($blogpost->faq), fn (SchemaCollection $schema): SchemaCollection => $schema->addFaqPage(
+                    function (FaqPageSchema $faqPageSchema) use ($blogpost): FaqPageSchema {
+                        foreach ($blogpost->faq as $item) {
+                            $faqPageSchema->addQuestion($item['question'], $item['answer']);
+                        }
+
+                        return $faqPageSchema;
+                    }
+                )),
             type: 'article',
         );
 
