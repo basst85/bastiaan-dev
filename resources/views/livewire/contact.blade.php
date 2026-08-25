@@ -1,15 +1,15 @@
 <main id="main-content" class="flex min-h-[calc(100dvh-4rem)] flex-col justify-start">
     <x-og-image>
         <div class="flex h-full w-full flex-col items-center justify-center gap-6 bg-stone-900 p-16">
-            <p class="font-mono text-2xl text-accent-400">~/bastiaan.dev</p>
+            <p class="text-accent-400 font-mono text-2xl">~/bastiaan.dev</p>
             <h1 class="text-6xl font-bold text-white">Contact</h1>
             <p class="text-2xl text-stone-400">Let's talk about your project</p>
         </div>
     </x-og-image>
     <div class="mx-auto max-w-5xl px-4 py-8 md:py-12">
-        <h1 class="text-balance text-6xl font-bold tracking-tight text-stone-100">Contact</h1>
+        <h1 class="text-6xl font-bold tracking-tight text-balance text-stone-100">Contact</h1>
         <div
-            class="motion-preset-slide-up-lg mx-auto mt-6 min-w-full rounded-xl border border-stone-800 bg-stone-800/20 p-4 px-4 shadow-card md:max-w-5xl md:p-6"
+            class="motion-preset-slide-up-lg shadow-card mx-auto mt-6 min-w-full rounded-xl border border-stone-800 bg-stone-800/20 p-4 px-4 md:max-w-5xl md:p-6"
         >
             <p class="mb-4 text-stone-300">Any questions or remarks? Feel free to reach out.</p>
 

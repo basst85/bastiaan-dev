@@ -34,7 +34,7 @@ class ShowBlogpost extends Component
 
                     return $articleSchema;
                 })
-                ->addBreadcrumbs(fn (BreadcrumbListSchema $breadcrumbs): BreadcrumbListSchema => $breadcrumbs->prependBreadcrumbs([
+                ->addBreadcrumbs(fn (BreadcrumbListSchema $breadcrumbListSchema): BreadcrumbListSchema => $breadcrumbListSchema->prependBreadcrumbs([
                     'Home' => url('/'),
                     'Blog' => url('/blog'),
                 ]))

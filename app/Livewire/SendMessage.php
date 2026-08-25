@@ -56,7 +56,7 @@ class SendMessage extends Component
                     'name' => $SEOData->title,
                     'url' => $SEOData->url,
                 ])
-                ->addBreadcrumbs(fn (BreadcrumbListSchema $breadcrumbs): BreadcrumbListSchema => $breadcrumbs->prependBreadcrumbs([
+                ->addBreadcrumbs(fn (BreadcrumbListSchema $breadcrumbListSchema): BreadcrumbListSchema => $breadcrumbListSchema->prependBreadcrumbs([
                     'Home' => url('/'),
                 ])),
         ));

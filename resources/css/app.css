@@ -1,13 +1,75 @@
 /* Self-hosted fonts: Geist Sans for UI, Geist Mono for code and dates */
-@import '@fontsource/geist-sans/latin-400.css';
-@import '@fontsource/geist-sans/latin-500.css';
-@import '@fontsource/geist-sans/latin-600.css';
-@import '@fontsource/geist-sans/latin-700.css';
-@import '@fontsource-variable/geist-mono';
+@import '@fontsource/geist-sans/latin-400.css' layer(base);
+@import '@fontsource/geist-sans/latin-500.css' layer(base);
+@import '@fontsource/geist-sans/latin-600.css' layer(base);
+@import '@fontsource/geist-sans/latin-700.css' layer(base);
+@import '@fontsource-variable/geist-mono' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/robsontenorio/mary/src/View/Components/**/*.php';
+@source '../../storage/framework/views/*.php';
+
+@plugin 'tailwindcss-motion';
+
+@plugin 'daisyui';
+
+@plugin 'daisyui/theme' {
+    name: 'bastiaandev';
+    default: true;
+    prefersdark: false;
+    color-scheme: dark;
+
+    --color-primary: #c17a45;
+    --color-primary-content: #241609;
+    --color-secondary: #8a8078;
+    --color-secondary-content: #1c1917;
+    --color-accent: #c17a45;
+    --color-accent-content: #241609;
+    --color-neutral: #292524;
+    --color-neutral-content: #e7e5e4;
+    --color-base-100: #1c1917;
+    --color-base-200: #221f1d;
+    --color-base-300: #3a3532;
+    --color-base-content: #e7e5e4;
+    --color-info: #7d9ab0;
+    --color-success: #7a9b76;
+    --color-warning: #c9a227;
+    --color-error: #c1574a;
+}
+
+@theme {
+    --font-sans:
+        'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', Arial,
+        sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono:
+        'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    --color-accent-50: #fbf3ec;
+    --color-accent-100: #f5e2d0;
+    --color-accent-200: #eac7a5;
+    --color-accent-300: #dea877;
+    --color-accent-400: #d18f5c;
+    --color-accent-500: #c17a45;
+    --color-accent-600: #a2632f;
+    --color-accent-700: #7e4d26;
+    --color-accent-800: #5c3a1f;
+    --color-accent-900: #402919;
+    --color-accent-950: #241609;
+    --shadow-card: 0 8px 30px -12px rgb(28 25 23 / 0.6);
+    --shadow-accent-glow: 0 0 0 1px rgb(193 122 69 / 0.15), 0 8px 30px -8px rgb(193 122 69 / 0.25);
+}
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
+}
 
 @layer base {
     html {
@@ -15,14 +77,14 @@
     }
 
     :focus-visible {
-        outline: 2px solid theme('colors.accent.400');
+        outline: 2px solid var(--color-accent-400);
         outline-offset: 2px;
         border-radius: 2px;
     }
 
     ::selection {
         background-color: rgb(193 122 69 / 35%);
-        color: theme('colors.stone.50');
+        color: var(--color-stone-50);
     }
 }
 
@@ -56,7 +118,7 @@ body > * {
 }
 
 .blogpost-content {
-    color: theme('colors.stone.200');
+    color: var(--color-stone-200);
     font-size: 1rem;
     line-height: 1.6rem;
     max-width: 68ch;
@@ -101,7 +163,7 @@ body > * {
 
     pre {
         background-color: #1c1917;
-        border: 1px solid theme('colors.stone.700');
+        border: 1px solid var(--color-stone-700);
         padding: 1rem;
         border-radius: 0.75rem;
         margin-bottom: 2rem;
@@ -116,8 +178,8 @@ body > * {
 
         .copy-button {
             font-size: 0.8rem;
-            background-color: theme('colors.stone.700');
-            color: theme('colors.stone.100');
+            background-color: var(--color-stone-700);
+            color: var(--color-stone-100);
             border: none;
             padding: 0.5rem;
             border-radius: 0.5rem;
@@ -126,7 +188,7 @@ body > * {
         }
 
         .copy-button:hover {
-            background-color: theme('colors.stone.600');
+            background-color: var(--color-stone-600);
         }
     }
 
@@ -137,13 +199,13 @@ body > * {
     }
 
     a {
-        color: theme('colors.accent.300');
+        color: var(--color-accent-300);
         text-decoration: none;
         text-underline-offset: 2px;
         transition: color 0.2s ease;
 
         &:hover {
-            color: theme('colors.accent.200');
+            color: var(--color-accent-200);
             text-decoration: underline;
         }
     }
@@ -151,6 +213,6 @@ body > * {
 
 label {
     span {
-        color: theme('colors.stone.200');
+        color: var(--color-stone-200);
     }
 }

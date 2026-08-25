@@ -8,7 +8,7 @@
 @endphp
 
 <a
-    class="group overflow-hidden rounded-xl border border-stone-800 bg-stone-800/30 p-1 shadow-card transition-all duration-200 hover:-translate-y-1 hover:border-accent-600/60"
+    class="group shadow-card hover:border-accent-600/60 overflow-hidden rounded-xl border border-stone-800 bg-stone-800/30 p-1 transition-all duration-200 hover:-translate-y-1"
     href="{{ route('blogpost.show', $blogpost->slug) }}"
     data-pan="blogpost-{{ $blogpost->slug }}"
 >
@@ -28,10 +28,10 @@
             <x-bi-clock-fill class="h-3 w-3" />
             <span class="font-mono text-sm tabular-nums">{{ $blogpost->min_read }} min read</span>
         </p>
-        <p class="font-mono text-sm font-medium tabular-nums text-stone-400">
+        <p class="font-mono text-sm font-medium text-stone-400 tabular-nums">
             {{ \Carbon\Carbon::parse($blogpost->publish_date)->diffForHumans() }}
         </p>
-        <p class="pb-4 pt-2 text-stone-300">
+        <p class="pt-2 pb-4 text-stone-300">
             {{ $blogpost->intro }}
         </p>
     </div>

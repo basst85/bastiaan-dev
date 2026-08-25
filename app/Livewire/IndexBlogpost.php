@@ -33,7 +33,7 @@ class IndexBlogpost extends Component
                     'description' => $SEOData->description,
                     'url' => $SEOData->url,
                 ])
-                ->addBreadcrumbs(fn (BreadcrumbListSchema $breadcrumbs): BreadcrumbListSchema => $breadcrumbs->prependBreadcrumbs([
+                ->addBreadcrumbs(fn (BreadcrumbListSchema $breadcrumbListSchema): BreadcrumbListSchema => $breadcrumbListSchema->prependBreadcrumbs([
                     'Home' => url('/'),
                 ])),
         ));

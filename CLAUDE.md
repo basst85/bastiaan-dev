@@ -15,9 +15,9 @@ composer run dev
 
 **Frontend only:**
 ```bash
-npm run dev      # Vite dev server
-npm run build    # production build
-npm run format   # prettier --write resources/ (blade + tailwind class sorting)
+bun run dev      # Vite dev server
+bun run build    # production build
+bun run format   # prettier --write resources/ (blade + tailwind class sorting)
 ```
 
 **Tests** (Pest, on top of PHPUnit):

@@ -7,8 +7,8 @@
 
 @php
     $classes = [
-        'primary' => 'rounded-md bg-accent-500 px-4 py-2 text-center text-sm font-medium text-accent-950 transition-all duration-200 hover:bg-accent-400 active:scale-[0.98]',
-        'secondary' => 'rounded-md border border-stone-700 px-4 py-2 text-center text-sm font-medium text-stone-200 transition-all duration-200 hover:border-accent-400 hover:text-accent-300 active:scale-[0.98]',
+        'primary' => 'bg-accent-500 text-accent-950 hover:bg-accent-400 rounded-md px-4 py-2 text-center text-sm font-medium transition-all duration-200 active:scale-[0.98]',
+        'secondary' => 'hover:border-accent-400 hover:text-accent-300 rounded-md border border-stone-700 px-4 py-2 text-center text-sm font-medium text-stone-200 transition-all duration-200 active:scale-[0.98]',
     ];
 @endphp
 

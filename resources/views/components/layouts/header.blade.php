@@ -17,7 +17,7 @@
                     href="/"
                     data-pan="header-logo"
                     wire:navigate
-                    class="font-mono text-xl font-medium text-stone-100 transition-colors hover:text-accent-300"
+                    class="hover:text-accent-300 font-mono text-xl font-medium text-stone-100 transition-colors"
                 >
                     <span class="text-accent-400">~/</span>
                     bastiaan.dev
@@ -45,7 +45,7 @@
     </div>
 
     <div class="md:hidden" x-show="isOpen" style="display: none">
-        <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+        <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
             @foreach ($menuItems as $item)
                 <a
                     href="{{ $item['href'] }}"

@@ -3,8 +3,8 @@
         id="main-content"
         class="flex min-h-[calc(100dvh-4rem)] flex-col items-center justify-center px-4 text-center"
     >
-        <p class="font-mono text-sm tabular-nums text-accent-400">419</p>
-        <h1 class="mt-2 text-balance text-4xl font-bold tracking-tight text-stone-100 md:text-5xl">
+        <p class="text-accent-400 font-mono text-sm tabular-nums">419</p>
+        <h1 class="mt-2 text-4xl font-bold tracking-tight text-balance text-stone-100 md:text-5xl">
             This page expired.
         </h1>
         <p class="mt-4 max-w-[45ch] text-pretty text-stone-400">
@@ -15,7 +15,7 @@
                 type="button"
                 onclick="history.back()"
                 data-pan="419-back"
-                class="rounded-md bg-accent-500 px-4 py-2 text-center text-sm font-medium text-accent-950 transition-all duration-200 hover:bg-accent-400 active:scale-[0.98]"
+                class="bg-accent-500 text-accent-950 hover:bg-accent-400 rounded-md px-4 py-2 text-center text-sm font-medium transition-all duration-200 active:scale-[0.98]"
             >
                 Go back
             </button>
