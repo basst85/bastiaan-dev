@@ -6,10 +6,6 @@
             <p class="text-2xl text-stone-400">Full stack developer</p>
         </div>
     </x-og-image>
-    <div
-        class="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-accent-600/10 blur-3xl"
-        aria-hidden="true"
-    ></div>
     <div class="mx-auto max-w-5xl px-4">
         <div class="motion-preset-slide-up-lg mx-auto max-w-5xl px-4">
             <h1 class="mb-4 text-balance text-5xl font-bold tracking-tight text-stone-100 md:text-6xl">

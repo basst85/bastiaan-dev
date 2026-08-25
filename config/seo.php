@@ -5,7 +5,7 @@ return [
 
     'sitemap' => '/sitemap.xml',
 
-    'favicon' => '/favicon.svg',
+    'favicon' => null,
 
     'description' => [
         'fallback' => 'Personal website and technical blog of Bastiaan Steinmeier, a self-taught full stack developer.',
