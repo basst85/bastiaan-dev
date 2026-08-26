@@ -21,7 +21,7 @@
             <h1 class="mb-2 text-5xl font-bold tracking-tight text-balance text-stone-100 md:text-6xl">
                 {{ $tag }}
             </h1>
-            <div class="motion-preset-slide-up-lg mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div class="blog-grid mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                 @foreach ($posts as $blogpost)
                     <x-blog-post-card :blogpost="$blogpost" :priority="$loop->index < 2" />
                 @endforeach
