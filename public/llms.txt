@@ -19,6 +19,7 @@ Notes:
 - [End-to-End Type Safety: Building with the BEDR-stack](https://bastiaan.dev/blog/bedr-stack-monorepo-architecture): A practical, type-safe monorepo setup using Bun, Elysia, Drizzle, and React.
 - [From Vectors to Answers: Building a Local RAG Agent](https://bastiaan.dev/blog/from-vectors-to-answers-local-rag): Building a local RAG agent with Bun, SQLite vector search, and Ollama.
 - [Teaching a language model a skill (using poker as an example)](https://bastiaan.dev/blog/teaching-a-language-model-a-skill): Using fine-tuning to turn a hallucinating language model into a system you can actually trust.
+- [Building a durable agent harness: workflow orchestration with Eve](https://bastiaan.dev/blog/durable-agent-harness-eve): Moving state management, subagent routing, and human approval gates out of a while loop and into a durable harness.
 - [Modern Web Development with Bun, React, and Tailwind CSS](https://bastiaan.dev/blog/modern-web-development-with-bun): Introducing a streamlined stack of Bun, React, and Tailwind CSS for modern web development.
 - [From Text to Vectors: A Practical Guide to Semantic Search](https://bastiaan.dev/blog/from-text-to-vectors): Building a semantic search engine using SQLite and OpenAI's API.
 - [Hello, world](https://bastiaan.dev/blog/test-blog-post): The launch post introducing this personal website.
