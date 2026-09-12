@@ -26,7 +26,9 @@ php artisan test                                  # full suite
 php artisan test --filter=test_name                # single test by name
 php artisan test tests/Feature/RoutesTest.php       # single file
 ```
-Test env forces `QUEUE_CONNECTION=sync` and `MAIL_MAILER=array` (see [phpunit.xml](phpunit.xml)) — queued jobs and notifications run inline and land in the array mailer during tests, not on a real queue.
+Test env forces `QUEUE_CONNECTION=sync` and `MAIL_MAILER=array` (see [phpunit.xml](phpunit.xml)) — queued jobs and notifications run inline and land in the array mailer during tests, not on a real queue. All `Feature` tests get `RefreshDatabase` automatically (see [tests/Pest.php](tests/Pest.php)) — the sqlite schema is migrated fresh per test, so DB-touching tests (e.g. `BlogReaction`) need no per-file setup.
+
+Since blog posts are files rather than database rows (see below), a couple of tests write a temporary post directly to `posts/` for the duration of one test (e.g. [tests/Feature/BlogVisibilityTest.php](tests/Feature/BlogVisibilityTest.php), to exercise the `published: false` branch that no real post currently takes) — always clean these up in `afterEach()`, and give the fixture a real `header_image` path, since `url(null)` returns a `UrlGenerator` instance instead of a string and breaks the blog views. [public/sitemap.xml](public/sitemap.xml) is a generated, committed file (see Sitemap below); tests that call `sitemap:generate` (e.g. [tests/Feature/GenerateSitemapTest.php](tests/Feature/GenerateSitemapTest.php)) must back up and restore it, or the test run leaves it dirty on disk.
 
 **Static analysis / refactoring:**
 ```bash
