@@ -32,6 +32,11 @@ class GenerateSitemap extends Command
                 Url::create(url('/contact'))
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                     ->setPriority(0.5)
+            )
+            ->add(
+                Url::create(url('/modern-css'))
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                    ->setPriority(0.5)
             );
 
         $posts = $sheets->all()->filter(fn ($post) => (bool) $post->published);
@@ -64,7 +69,7 @@ class GenerateSitemap extends Command
 
         $sitemap->writeToFile(public_path('sitemap.xml'));
 
-        $this->info(sprintf('Sitemap generated with %d URLs at public/sitemap.xml.', 3 + $posts->count() + $tagSlugs->count()));
+        $this->info(sprintf('Sitemap generated with %d URLs at public/sitemap.xml.', 4 + $posts->count() + $tagSlugs->count()));
 
         return self::SUCCESS;
     }

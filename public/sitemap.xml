@@ -16,6 +16,11 @@
     <priority>0.5</priority>
             </url>
     <url>
+    <loc>https://bastiaan.dev/modern-css</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+            </url>
+    <url>
     <loc>https://bastiaan.dev/blog/agentic-orchestration-claude</loc>
     <lastmod>2026-06-14T20:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -24,6 +29,12 @@
     <url>
     <loc>https://bastiaan.dev/blog/bedr-stack-monorepo-architecture</loc>
     <lastmod>2026-05-20T20:46:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+            </url>
+    <url>
+    <loc>https://bastiaan.dev/blog/durable-agent-harness-eve</loc>
+    <lastmod>2026-09-02T21:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
             </url>
