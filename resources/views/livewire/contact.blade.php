@@ -15,29 +15,31 @@
 
             <x-form wire:submit="send" class="space-y-4 md:min-w-[60rem]">
                 <div class="form-control w-full">
-                    <label class="label">
+                    <label class="label pb-2">
                         <span class="label-text text-stone-200">
                             Name
-                            <span class="text-error">*</span>
+                            <span class="text-error text-xs">*</span>
                         </span>
                     </label>
                     <input
                         type="text"
+                        name="name"
                         wire:model="name"
                         required
+                        autocomplete="name"
                         aria-label="Name"
                         class="input input-lg input-bordered w-full"
                     />
                 </div>
 
                 <div class="form-control w-full">
-                    <label class="label">
+                    <label class="label pb-2">
                         <span class="label-text text-stone-200">
                             Email address
-                            <span class="text-error">*</span>
+                            <span class="text-error text-xs">*</span>
                         </span>
                     </label>
-                    <label class="input input-lg input-bordered flex items-center gap-2">
+                    <label class="input input-lg input-bordered flex w-full items-center gap-2">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -52,15 +54,26 @@
                                 d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
                             />
                         </svg>
-                        <input type="email" wire:model="email" required aria-label="Email address" class="grow" />
+                        <input
+                            type="email"
+                            name="email"
+                            wire:model.live.blur="email"
+                            required
+                            autocomplete="email"
+                            aria-label="Email address"
+                            class="grow"
+                        />
                     </label>
+                    @error('email')
+                        <span class="text-error mt-1 text-sm">{{ $message }}</span>
+                    @enderror
                 </div>
 
                 <div class="form-control w-full">
-                    <label class="label">
+                    <label class="label pb-2">
                         <span class="label-text text-stone-200">
                             Subject
-                            <span class="text-error">*</span>
+                            <span class="text-error text-xs">*</span>
                         </span>
                     </label>
                     <input
@@ -73,10 +86,10 @@
                 </div>
 
                 <div class="form-control w-full">
-                    <label class="label">
+                    <label class="label pb-2">
                         <span class="label-text text-stone-200">
                             Message
-                            <span class="text-error">*</span>
+                            <span class="text-error text-xs">*</span>
                         </span>
                     </label>
                     <textarea
@@ -101,7 +114,13 @@
                 @endif
 
                 <x-slot:actions>
-                    <x-atoms.button submit="true" aria-label="Send contact message">Send message</x-atoms.button>
+                    <x-atoms.button
+                        submit="true"
+                        aria-label="Send contact message"
+                        x-bind:disabled="!$wire.name || !$wire.email || !$wire.subject || !$wire.message"
+                    >
+                        Send message
+                    </x-atoms.button>
                 </x-slot>
             </x-form>
         </div>

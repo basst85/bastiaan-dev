@@ -17,7 +17,10 @@
         {{ $slot }}
     </a>
 @else
-    <button class="{{ $classes[$type ?? 'primary'] }}" @if ($submit) type="submit" @endif>
+    <button
+        {{ $attributes->merge(['class' => $classes[$type ?? 'primary'] . ' disabled:cursor-not-allowed disabled:opacity-50 disabled:active:scale-100']) }}
+        @if ($submit) type="submit" @endif
+    >
         {{ $slot }}
     </button>
 @endif
